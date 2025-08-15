@@ -1,37 +1,206 @@
-
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background-color: #f5f5f5;
+  background-color: #f9fafc;
   color: #333;
+  line-height: 1.6;
 }
+
+/* Header */
 header {
-  background-color: #004080;
+  background: linear-gradient(135deg, #004080, #0059b3);
   color: white;
-  padding: 1em;
+  padding: 1.5em 1em;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+
+header h1 {
+  margin-bottom: 0.3em;
+  font-size: 2rem;
+}
+
+header .tagline {
+  font-style: italic;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
 nav ul {
   display: flex;
   justify-content: center;
-  list-style-type: none;
+  list-style: none;
+  margin-top: 1em;
   padding: 0;
 }
+
 nav ul li {
   margin: 0 1em;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
+
+nav ul li a:hover {
+  color: #ffdd57;
+}
+
+/* Main Sections */
 main {
   padding: 2em;
+  max-width: 1100px;
+  margin: auto;
 }
+
+section {
+  margin-bottom: 2.5em;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Lists in Solution Section */
+.solution ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.solution li {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.solution li::before {
+  content: "✔";
+  color: #004080;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* References */
+.references ol {
+  padding-left: 1.5em;
+}
+
+/* Footer */
 footer {
-  background-color: #eee;
+  background-color: #004080;
+  color: white;
   text-align: center;
   padding: 1em;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: var(--blue-600);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: var(--blue-700);
+}
+
+.cta-container {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #ff9800; /* bright orange to pop */
+  color: white;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.cta-button:hover {
+  background: #e68900;
+}
+
+/* Dashboard Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.dashboard-widget {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.dashboard-widget h3 {
+  margin-top: 0;
+}
+
+/* Dropdown styling */
+select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* KPI tiles */
+.kpi-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1rem;
+}
+.kpi{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  text-align:center;
+}
+.kpi-label{
+  font-size:.9rem;
+  opacity:.75;
+}
+.kpi-value{
+  font-size:1.4rem;
+  font-weight:700;
+  margin-top:.25rem;
+}
+
+/* Make canvas charts behave nicely within widgets */
+.dashboard-widget canvas{
+  width:100% !important;
+  height:auto !important;
+  display:block;
 }

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carson Mulder — Resume</title>
+<meta name="description" content="Resume for Carson Mulder — cybersecurity, data analytics, and software engineering." />
+<style>
+  :root{
+    --bg:#181818;        /* dark UI */
+    --bg-soft:#1f1f1f;
+    --card:#202225;
+    --text:#e7e7e7;
+    --muted:#b3b3b3;
+    --border:#2a2a2a;
+    --accent:#19b140;    /* green */
+    --accent-weak:#19b14022;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1120px;margin-inline:auto;padding:0 20px}
+
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#0a0a0a;border:none;padding:.7rem 1rem;border-radius:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px var(--accent-weak)}
+  .btn.secondary{background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none}
+
+  header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:#181818cc;border-bottom:1px solid var(--border);z-index:10}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav{display:flex;gap:18px;font-size:.95rem}
+  nav a{padding:10px 0;border-bottom:2px solid transparent}
+  nav a:hover{border-color:var(--accent)}
+  .actions{display:flex;gap:8px}
+
+  .hero{padding:28px 0 6px}
+  h1{font-size:clamp(30px,4vw,40px);line-height:1.05;margin:0 0 4px;font-weight:900;letter-spacing:.3px}
+  h2{font-size:clamp(18px,2.5vw,22px);margin:0 0 12px}
+  h3{margin:0 0 6px;font-size:1.05rem}
+  .muted{color:var(--muted)}
+  .divider{height:1px;background:var(--border);margin:20px 0}
+  .chip{display:inline-flex;align-items:center;border:1px solid var(--border);background:#ffffff0a;border-radius:999px;padding:.28rem .6rem;font-size:.85rem;margin-right:.4rem;margin-bottom:.4rem}
+
+  /* Resume canvas */
+  .resume-wrap{background:linear-gradient(180deg,var(--card),#1a1a1a);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:24px}
+  .topline{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .topline a.link{text-decoration:underline dotted 2px;text-underline-offset:3px}
+  .section{margin:16px 0}
+  .grid{display:grid;gap:18px}
+  @media (min-width:980px){ .grid-2{grid-template-columns: 2fr 1fr} }
+
+  .item{margin-bottom:10px}
+  .role{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .where{color:var(--muted);font-weight:600}
+  .when{color:var(--muted);font-size:.95rem}
+  ul{padding-left:18px;margin:8px 0}
+  li{margin:6px 0}
+
+  /* Screen-only toolbar */
+  .toolbar{display:flex;gap:10px;justify-content:flex-end;margin:10px 0 0}
+  .screen-only{display:block}
+  .print-only{display:none}
+
+  /* Print styles: clean white PDF, single column, hides nav/buttons */
+  @media print {
+    html, body { background:#fff; color:#111; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    header, .toolbar, .screen-only, .sitebar, footer { display:none !important; }
+    .container { max-width:800px; padding:0 24px; }
+    .resume-wrap { border:none; border-radius:0; box-shadow:none; background:#fff; color:#111; }
+    h1 { font-size:28px }
+    h2 { font-size:16px; margin:0 0 8px }
+    h3 { font-size:14px }
+    .chip { border:1px solid #bbb; background:#f5f5f5; color:#111 }
+    .divider { background:#ddd }
+    a { color:#111; text-decoration:underline }
+    .grid-2 { grid-template-columns: 1fr !important; }
+    .section { break-inside: avoid; page-break-inside: avoid; }
+    .print-only{display:block}
+  }
+</style>
+</head>
+<body>
+  <!-- Sticky Header -->
+  <header>
+    <div class="container sitebar">
+      <a href="index.html" style="font-weight:900;letter-spacing:.12em;">CM</a>
+      <nav class="screen-only">
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="academic.html">Artifacts</a>
+        <a href="internship.html">Internship</a>
+        <a href="vision-goals.html">Vision &amp; Goals</a>
+        <a href="video.html">Video</a>
+      </nav>
+      <div class="actions screen-only">
+        <button class="btn" onclick="window.print()">Download PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <!-- Resume Canvas -->
+      <div id="resume" class="resume-wrap">
+        <!-- NAME + CONTACT -->
+        <h1>Carson Mulder</h1>
+        <div class="topline">
+          <span>Tennessee, USA</span>
+          <span>•</span>
+          <a class="link" href="mailto:carson@example.com">carson@example.com</a> <!-- TODO -->
+          <span>•</span>
+          <a class="link" href="https://github.com/yourusername" target="_blank" rel="noreferrer">github.com/yourusername</a> <!-- TODO -->
+          <span>•</span>
+          <a class="link" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a> <!-- TODO -->
+          <span class="print-only">• evolutionarchery.org</span>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="section">
+          <h2>Summary</h2>
+          <p class="muted">
+            Computer Science undergraduate (ETSU) focused on incident response, network security, and data analytics.
+            Experience across enterprise healthcare systems (BCBST), forensic training content, and BI dashboards.
+            Calm operator from FOH audio engineering; designs pragmatic solutions that are reliable, observable, and secure.
+          </p>
+          <div>
+            <span class="chip">Incident Response</span>
+            <span class="chip">Threat Hunting</span>
+            <span class="chip">Windows Forensics</span>
+            <span class="chip">Python</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Git</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- EXPERIENCE + SIDEBAR -->
+        <div class="grid grid-2 section">
+          <div>
+            <h2>Experience</h2>
+
+            <div class="item">
+              <div class="role">
+                <strong>Enterprise Technology Solutions Intern</strong>
+                <span class="when">Summer 2024</span>
+              </div>
+              <div class="where">BlueCross BlueShield of Tennessee (BCBST) — Chattanooga, TN</div>
+              <ul>
+                <li>Rotations across Claims Payments &amp; Encounters Accumulators teams; supported data quality and automation.</li>
+                <li>Assisted compliance-minded testing and documentation for healthcare workflows.</li>
+                <li>Collaborated with cross-functional teams to triage defects and clarify acceptance criteria.</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="role">
+                <strong>Front of House (FOH) Sound Engineer</strong>
+                <span class="when">2019–Present</span>
+              </div>
+              <div class="where">Freelance / Venues</div>
+              <ul>
+                <li>Operate live sound systems under pressure; troubleshoot RF and signal chains quickly.</li>
+                <li>Translate artist/production needs into reliable technical setups; clear, concise incident-style comms.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside>
+            <h2>Core Skills</h2>
+            <ul>
+              <li>Security: IR playbooks, triage, timelines; Windows event/log analysis</li>
+              <li>Data: Python (pandas), visualization, Power BI, ArcGIS</li>
+              <li>Software: Python, Java, SQL, HTML/CSS, Git</li>
+              <li>Systems: Linux/Windows admin, scripting, version control</li>
+            </ul>
+
+            <h2>Tooling</h2>
+            <p class="muted">VS Code, Power BI, GitHub, Wireshark/Event Viewer, ArcGIS</p>
+
+            <h2>Highlights</h2>
+            <ul>
+              <li>Published portfolio site with custom domain: evolutionarchery.org</li>
+              <li>Competitive target archer — discipline &amp; consistency</li>
+              <li>Sim racing &amp; telemetry tinkering</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+          <h2>Selected Projects</h2>
+
+          <div class="item">
+            <div class="role">
+              <strong>ctOS Digital Shadows (TryHackMe Premium Room)</strong>
+              <span class="when">2025</span>
+            </div>
+            <ul>
+              <li>Windows forensic investigation over RDP: event logs, persistence, credential artifacts.</li>
+              <li>Built hands-on challenges and write-ups to train triage and timeline skills.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="role">
+              <strong>Real-Time Incident Response (AI-Driven SOC)</strong>
+              <span class="when">2025</span>
+            </div>
+            <ul>
+              <li>Prototype for automated breach detection and playbook execution; APA-style research paper with appendices.</li>
+              <li>Python stream processing + rule/ML approach to reduce detection-to-response time.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="role">
+              <strong>Healthcare Data Analytics</strong>
+              <span class="when">2025</span>
+            </div>
+            <ul>
+              <li>Cleaned and modeled healthcare datasets; Power BI dashboards with operational recommendations.</li>
+              <li>Documented pipeline, assumptions, and decision-ready insights.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="role">
+              <strong>Secure Your Hospital (CSCI 4847)</strong>
+              <span class="when">2025</span>
+            </div>
+            <ul>
+              <li>Designed security controls: IAM, logging/monitoring, network segmentation, IR procedures.</li>
+              <li>Produced pragmatic playbook and architecture notes for hospital IT environments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+          <h2>Education</h2>
+          <div class="item">
+            <div class="role">
+              <strong>East Tennessee State University (ETSU)</strong>
+              <span class="when">Expected 2026</span>
+            </div>
+            <div class="where">B.S. in Computer Science</div>
+            <ul>
+              <li>Coursework: Network Security, Information Security &amp; Assurance, Ethical Hacking, Healthcare Analytics, Privacy &amp; Security Design.</li>
+              <li>Labs/Work: Operation Gamma (protocol breach investigation), Operation Red Queen (IR procedures), Crystal Agile workshop.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Screen-only toolbar (duplicate for convenience near bottom) -->
+      <div class="toolbar screen-only">
+        <button class="btn" onclick="window.print()">Download PDF</button>
+        <a class="btn secondary" href="index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="screen-only" style="border-top:1px solid var(--border);padding:20px 0;color:var(--muted)">
+    <div class="container">© <span id="year"></span> Carson Mulder</div>
+  </footer>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Tip: window.print() opens the browser print dialog. Choose "Save as PDF" to export.
+  // If you later want a JS-generated PDF (without the print dialog), we can add html2canvas + jsPDF,
+  // but print-to-PDF preserves layout and fonts better across browsers.
+</script>
+</body>
+</html>

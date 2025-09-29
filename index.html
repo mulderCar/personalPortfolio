@@ -5,28 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carson Mulder – Personal Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="BlueSky Internship Portfolio — Carson Mulder (Rotation III)."/>
 </head>
 <body>
   <header>
-    <h1>Carson Mulder – Personal Portfolio</h1>
+    <h1>Carson Mulder</h1>
+    <div class="tagline">BlueSky Internship • Rotation III • Cybersecurity • Data • Software</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="video.html">Video Reflection</a></li>
-        <li><a href="academic.html">Academic Artifacts</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="vision-goals.html">Vision &amp; Goals</a></li>
+        <li><a href="academic.html">Professional Artifacts</a></li>
         <li><a href="internship.html">Internship Projects</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>This is a placeholder portfolio for Carson Mulder, developed for the BlueSky internship program. It showcases academic work, career goals, and professional experience.</p>
+
+  <main class="container">
+    <!-- Hero / Intro -->
+    <section class="hero reveal">
+      <div style="flex:1;min-width:260px">
+        <h2 style="margin-top:0">BlueSky Internship Portfolio (Rotation III)</h2>
+        <p class="muted">
+          This portfolio presents my BlueSky internship outcomes and academic artifacts, aligned to
+          program requirements: Introduction, Video Reflection, Resume, Vision/Mission, Career Goals,
+          Professional Artifacts (min. 2), and Final Projects from Internship Experiences (Rotations I–III).
+        </p>
+        <div class="cta-container" style="text-align:left;margin:1rem 0 0">
+          <a class="cta-button" href="#checklist">View Course Checklist</a>
+          <a class="cta-button" style="margin-left:.6rem;background:transparent;border:1px solid var(--border);color:var(--text)" href="internship.html">Go to Internship Projects</a>
+        </div>
+      </div>
+      <div class="card" style="flex:1;min-width:260px">
+        <h3 style="margin-top:0">Direct Links</h3>
+        <ul class="list muted" style="padding-left:18px">
+          <li><a class="link" href="about.html">Introduction</a></li>
+          <li><a class="link" href="video.html">Video Reflection</a></li>
+          <li><a class="link" href="resume.html">Resume</a></li>
+          <li><a class="link" href="vision-goals.html">Vision &amp; Career Goals</a></li>
+          <li><a class="link" href="academic.html">Professional Artifacts (min. 2)</a></li>
+          <li><a class="link" href="internship.html">Final Projects from Internship Experiences</a> (Rotation I, II, III)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Course Checklist (dates from syllabus) -->
+    <section id="checklist" class="reveal">
+      <h2>Course Checklist & Key Dates</h2>
+      <div class="dashboard-grid">
+        <div class="dashboard-widget">
+          <h3>Beginning of Semester</h3>
+          <p class="muted"><strong>Goal Planning Worksheet</strong> — <em>Due Sep 4, 2025</em></p>
+          <p class="muted">Complete the Goal Planning survey in D2L.</p>
+        </div>
+        <div class="dashboard-widget">
+          <h3>Mid-Semester</h3>
+          <p class="muted"><strong>Status/Progress Report</strong> — <em>Due Sep 30, 2025</em></p>
+          <p class="muted"><strong>Portfolio Check-In (submit link)</strong> — <em>Due Sep 30, 2025</em></p>
+          <p class="muted">Portfolio must include: Intro, Video, Resume, Vision/Mission, Career Goals, Professional Artifacts (≥2), Final Projects (Rotations I–III).</p>
+        </div>
+        <div class="dashboard-widget">
+          <h3>End of Semester</h3>
+          <p class="muted"><strong>Internship Paper/Project</strong> — <em>Due Nov 14, 2025</em></p>
+          <p class="muted"><strong>Final Portfolio</strong> — <em>Due Nov 21, 2025</em></p>
+          <p class="muted"><strong>Exit Survey</strong> — <em>Due Nov 21, 2025</em></p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">
+        Dates and required sections per BlueSky Rotation III handout. See syllabus for details.
+      </p>
+    </section>
+
+    <!-- Featured Sections Overview -->
+    <section class="reveal">
+      <h2>What You'll Find Here</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 style="margin-top:0">Professional Artifacts</h3>
+          <p class="muted">Two or more artifacts from prior courses demonstrating skills (e.g., security lab reports, data dashboards, research briefs).</p>
+          <p><a class="link" href="academic.html">View Professional Artifacts</a></p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Final Projects (Internship)</h3>
+          <p class="muted">Deliverables from internship experiences, organized by Rotation I, II, and III, with context and outcomes.</p>
+          <p><a class="link" href="internship.html">View Internship Projects</a></p>
+        </article>
+      </div>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Carson Mulder</p>
+    <p>&copy; <span id="year"></span> Carson Mulder</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target);} });
+    }, {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>

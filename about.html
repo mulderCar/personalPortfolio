@@ -5,38 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me – Carson Mulder</title>
   <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="About Carson Mulder — mission, vision, resume highlights, and career goals."/>
 </head>
 <body>
   <header>
-    <h1>Carson Mulder – Personal Portfolio</h1>
+    <h1>Carson Mulder</h1>
+    <div class="tagline">BlueSky Internship • Rotation III • Cybersecurity • Data • Software</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="video.html">Video Reflection</a></li>
-        <li><a href="academic.html">Academic Artifacts</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="vision-goals.html">Vision &amp; Goals</a></li>
+        <li><a href="academic.html">Professional Artifacts</a></li>
         <li><a href="internship.html">Internship Projects</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    
-        <h2>About Me</h2>
-        <p>This page includes my professional mission statement, resume, and career goals.</p>
-        <h3>Mission Statement</h3>
-        <p>Placeholder mission statement about Carson's goals and values.</p>
-        <h3>Resume</h3>
-        <p><a href="assets/resume.pdf" download>Download Resume (PDF)</a></p>
-        <h3>Career Goals</h3>
-        <ul>
-            <li>Goal 1: Placeholder career goal</li>
-            <li>Goal 2: Placeholder career goal</li>
-            <li>Goal 3: Placeholder career goal</li>
+
+  <main class="container">
+    <!-- INTRO / HERO -->
+    <section class="hero reveal">
+      <div style="flex:1;min-width:260px">
+        <h2 style="margin-top:0">About Me</h2>
+        <p class="muted">
+          I’m a Computer Science student at East Tennessee State University (ETSU) with a focus on
+          <strong>incident response</strong>, <strong>network security</strong>, and <strong>data analytics</strong>.
+          I enjoy building practical solutions—from forensic training rooms and IR playbooks to healthcare analytics dashboards—
+          and I bring calm, systems-thinking from my work as a <strong>Front of House (FOH) sound engineer</strong>.
+        </p>
+        <div class="cta-container" style="text-align:left;margin-top:1rem">
+          <a class="cta-button" href="resume.html">See My Resume</a>
+          <a class="cta-button" style="margin-left:.6rem;background:transparent;border:1px solid var(--border);color:var(--text)" href="internship.html">Internship Projects</a>
+        </div>
+      </div>
+      <div class="card" style="flex:1;min-width:260px">
+        <h3 style="margin-top:0">Quick Facts</h3>
+        <ul class="list muted" style="padding-left:18px">
+          <li>ETSU • B.S. Computer Science • Expected 2026</li>
+          <li>BlueCross BlueShield of Tennessee — Enterprise Technology Solutions Intern (Summer 2024)</li>
+          <li>Security &amp; Data Projects: IR automation, healthcare analytics, Windows forensics room</li>
+          <li>Hobbies: Sim racing, target archery, audio engineering</li>
         </ul>
-        
+      </div>
+    </section>
+
+    <!-- MISSION / VISION -->
+    <section class="reveal">
+      <h2>Professional Mission &amp; Vision</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 style="margin-top:0">Mission Statement</h3>
+          <p class="muted">
+            Deliver reliable, observable, and secure systems by combining rigorous incident response practices
+            with data-driven decision making—so teams can detect issues early, respond confidently, and learn continuously.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Vision</h3>
+          <p class="muted">
+            Grow into a security engineer who builds automation that shortens the path from detection to recovery,
+            and mentors others to use analytics and good playbooks to reduce operational risk at scale.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESUME HIGHLIGHTS -->
+    <section class="reveal">
+      <h2>Resume Highlights</h2>
+      <div class="dashboard-grid">
+        <div class="dashboard-widget">
+          <h3>Education</h3>
+          <p class="muted"><strong>ETSU</strong> — B.S. in Computer Science (Expected 2026)</p>
+          <p class="muted">Courses: Network Security, InfoSec &amp; Assurance, Ethical Hacking, Healthcare Analytics, Privacy &amp; Security Design.</p>
+        </div>
+        <div class="dashboard-widget">
+          <h3>Internship</h3>
+          <p class="muted"><strong>BlueCross BlueShield of Tennessee</strong> — Enterprise Technology Solutions (Summer 2024)</p>
+          <ul class="list muted">
+            <li>Claims Payments &amp; Encounters Accumulators rotations</li>
+            <li>Data quality improvements, automation support, compliance-minded testing</li>
+          </ul>
+        </div>
+        <div class="dashboard-widget">
+          <h3>Selected Projects</h3>
+          <ul class="list muted">
+            <li><strong>ctOS Digital Shadows</strong> — Windows forensics (RDP, logs, persistence, creds)</li>
+            <li><strong>Real-Time IR (AI-Driven SOC)</strong> — detection + playbook orchestration</li>
+            <li><strong>Healthcare Analytics</strong> — Python + Power BI dashboards &amp; insights</li>
+          </ul>
+        </div>
+        <div class="dashboard-widget">
+          <h3>Core Skills</h3>
+          <p class="muted">Python, Java, SQL, Git, Power BI, ArcGIS</p>
+          <p class="muted">Incident Response, Threat Hunting, Network Security, Windows Forensics</p>
+          <p class="muted">Linux/Windows Admin, Scripting, Version Control</p>
+        </div>
+      </div>
+      <p style="margin-top:12px">
+        <a class="link" href="resume.html">View full resume</a>
+        &nbsp;•&nbsp;
+        <a class="link" href="academic.html">See professional artifacts</a>
+      </p>
+    </section>
+
+    <!-- CAREER GOALS (SMART) -->
+    <section class="reveal">
+      <h2>Career Goals (SMART)</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 style="margin-top:0">1) Analyst Foundations</h3>
+          <p class="muted">
+            <strong>Specific:</strong> Complete 2 SOC/IR labs per week (Blue Team &amp; Windows forensics) and publish brief write-ups.<br/>
+            <strong>Measurable:</strong> 8+ labs/month, 8 summaries posted/private notes.<br/>
+            <strong>Time-bound:</strong> Maintain cadence through the semester to build a portfolio for entry-level Security Analyst roles.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">2) IR Automation</h3>
+          <p class="muted">
+            <strong>Specific:</strong> Ship a small Python tool that enriches alerts (e.g., log parsing + IOC lookups) and triggers playbook steps.<br/>
+            <strong>Measurable:</strong> 1 CLI utility + README + example dataset.<br/>
+            <strong>Time-bound:</strong> Deliver MVP and documentation before final portfolio submission.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">3) Data Storytelling</h3>
+          <p class="muted">
+            <strong>Specific:</strong> Build a Power BI dashboard for a public security dataset (alerts/incidents) and present 3 actionable insights.<br/>
+            <strong>Measurable:</strong> 1 published PBIX (or screenshots) + short write-up.<br/>
+            <strong>Time-bound:</strong> Include visuals and insights in the Internship Projects page by the end of the term.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">4) Communication Under Pressure</h3>
+          <p class="muted">
+            <strong>Specific:</strong> Translate FOH troubleshooting into a 1-page “incident comms” checklist for security incidents.<br/>
+            <strong>Measurable:</strong> Checklist posted as an artifact + example scenario.<br/>
+            <strong>Time-bound:</strong> Add to Professional Artifacts before the mid-semester check-in.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="reveal" style="text-align:center">
+      <a class="cta-button" href="mailto:carson@example.com">Contact Me</a>
+      <a class="cta-button" style="margin-left:.6rem;background:transparent;border:1px solid var(--border);color:var(--text)" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="cta-button" style="margin-left:.6rem;background:transparent;border:1px solid var(--border);color:var(--text)" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a>
+    </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Carson Mulder</p>
+    <p>&copy; <span id="year"></span> Carson Mulder</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target);} });
+    }, {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>

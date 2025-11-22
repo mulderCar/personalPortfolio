@@ -75,24 +75,123 @@
     .section { break-inside: avoid; page-break-inside: avoid; }
     .print-only{display:block}
   }
+  /* ================================
+   Header / Navigation
+   ================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(24,24,24,.9);
+  backdrop-filter: saturate(140%) blur(8px);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  box-shadow: none; /* remove old bright shadow */
+}
+
+/* Header layout with left profile, center title, right nav */
+.header-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Position the profile picture independently on the left so header stays centered */
+.header-left {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 auto;
+}
+
+.header-center { flex: none; text-align: center; }
+.header-center h1 { margin: 0 0 .15rem; font-size: 1.6rem; font-weight: 900; letter-spacing: .3px; }
+.header-center .tagline { font-size: .95rem; color: var(--muted); margin-top: 0; }
+
+.profile-pic {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  background: var(--bg-soft);
+  display: block;
+}
+/* Move nav to the right */
+header nav { flex: none; margin-top: .45rem; }
+
+/* Responsive: collapse header on small screens and hide picture */
+@media (max-width: 720px) {
+  .header-inner { flex-direction: column; align-items: center; gap: .45rem; }
+  .header-left { display: none; }
+  .header-center { text-align: center; }
+  nav ul { margin-top: .5rem; }
+}
+
+header .tagline {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+  opacity: .95;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0.6em 0 0;
+  padding: 0;
+  gap: 1.25rem;
+}
+
+nav ul li { margin: 0; }
+
+nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .25s ease, opacity .25s ease;
+  opacity: .95;
+}
+
+nav ul li a:hover {
+  border-color: var(--accent);
+  opacity: 1;
+}
+
 </style>
 </head>
 <body>
   <!-- Sticky Header -->
   <header>
-    <div class="container sitebar">
-      <a href="index.html" style="font-weight:900;letter-spacing:.12em;">CM</a>
-      <nav class="screen-only">
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="academic.html">Artifacts</a>
-        <a href="internship.html">Internship</a>
-        <a href="vision-goals.html">Vision &amp; Goals</a>
-        <a href="video.html">Video</a>
-      </nav>
-      <div class="actions screen-only">
-        <button class="btn" onclick="window.print()">Download PDF</button>
+    <div class="header-inner">
+      <div class="header-left">
+        <img class="profile-pic" src="images/profile.jpg" alt="Carson Mulder profile picture" />
       </div>
+      <div class="header-center">
+        <h1>Carson Mulder</h1>
+        <div class="tagline">BlueSky Internship • Rotation III • Cybersecurity • Data • Software</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="video.html">Video Reflection</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="vision-goals.html">Vision &amp; Goals</a></li>
+          <li><a href="academic.html">Professional Artifacts</a></li>
+          <li><a href="internship.html">Internship Projects</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
